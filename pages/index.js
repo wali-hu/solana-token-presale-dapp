@@ -68,7 +68,7 @@ export default function Home() {
 
       console.log("Checking admin status for:", wallet.publicKey.toString());
 
-      const [dataPda] = await PublicKey.findProgramAddress(
+      const [dataPda] = await PublicKey.findProgramAddressSync(
         [Buffer.from("data"), wallet.publicKey.toBuffer()],
         program.programId
       );
@@ -116,12 +116,12 @@ export default function Home() {
       const program = getProgram();
       if (!program) return;
 
-      const [icoAtaPda] = await PublicKey.findProgramAddress(
+      const [icoAtaPda] = await PublicKey.findProgramAddressSync(
         [ICO_MINT.toBuffer()],
         program.programId
       );
 
-      const [dataPda] = await PublicKey.findProgramAddress(
+      const [dataPda] = await PublicKey.findProgramAddressSync(
         [Buffer.from("data"), wallet.publicKey.toBuffer()],
         program.programId
       );
@@ -166,12 +166,12 @@ export default function Home() {
       const program = getProgram();
       if (!program) return;
 
-      const [icoAtaPda] = await PublicKey.findProgramAddress(
+      const [icoAtaPda] = await PublicKey.findProgramAddressSync(
         [ICO_MINT.toBuffer()],
         program.programId
       );
 
-      const [dataPda] = await PublicKey.findProgramAddress(
+      const [dataPda] = await PublicKey.findProgramAddressSync(
         [Buffer.from("data"), wallet.publicKey.toBuffer()],
         program.programId
       );
@@ -223,12 +223,12 @@ export default function Home() {
         return;
       }
 
-      const [icoAtaPda, bump] = await PublicKey.findProgramAddress(
+      const [icoAtaPda, bump] = await PublicKey.findProgramAddressSync(
         [ICO_MINT.toBuffer()],
         program.programId
       );
 
-      const [dataPda] = await PublicKey.findProgramAddress(
+      const [dataPda] = await PublicKey.findProgramAddressSync(
         [Buffer.from("data"), icoData.admin.toBuffer()],
         program.programId
       );

@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 use anchor_spl::token::{self, Mint, Token, TokenAccount};
 
-declare_id!("7tLgLvXzTSL7PuN5YpRcM4jKgrLHXSPCwDbK2tGBX11u");
+declare_id!("7FpAtfPBAZ9ngxHk2V2V1KRqw1ajvc4RX3waVQmrZ2Fy");
 
 #[error_code]
 pub enum ErrorCode {
@@ -13,7 +13,7 @@ pub enum ErrorCode {
 
 #[program]
 pub mod ico {
-    pub const ICO_MINT_ADDRESS: &str = "61zBTbeUcekGLVoLuNA15Mh8RUcHB9g91D7eh5xF1i3Z";
+    pub const ICO_MINT_ADDRESS: &str = "mntj97ujX1Ut8ywikmXfo3kGCchMJRyeAukLSheRkSM";
     pub const LAMPORTS_PER_TOKEN: u64 = 1_000_000; // 0.001 SOL in lamports
     pub const TOKEN_DECIMALS: u64 = 1_000_000_000; // 10^9 for SPL token decimals
     use super::*;
@@ -127,11 +127,11 @@ pub mod ico {
         Ok(())
     }
 
-    /* 
-    -----------------------------------------------------------
-        CreateIcoATA struct for create_ico_ata function
-    -----------------------------------------------------------
-*/
+    /*
+        -----------------------------------------------------------
+            CreateIcoATA struct for create_ico_ata function
+        -----------------------------------------------------------
+    */
     #[derive(Accounts)]
     pub struct CreateIcoATA<'info> {
         #[account(
@@ -163,11 +163,11 @@ pub mod ico {
         pub rent: Sysvar<'info, Rent>,
     }
 
-    /* 
-    -----------------------------------------------------------
-        DepositIcoInATA struct for deposit_ico_in_ata function
-    -----------------------------------------------------------
-*/
+    /*
+        -----------------------------------------------------------
+            DepositIcoInATA struct for deposit_ico_in_ata function
+        -----------------------------------------------------------
+    */
     #[derive(Accounts)]
     pub struct DepositIcoInATA<'info> {
         #[account(mut)]
@@ -189,11 +189,11 @@ pub mod ico {
         pub token_program: Program<'info, Token>,
     }
 
-    /* 
-    -----------------------------------------------------------
-        BuyTokens struct for buy_tokens function
-    -----------------------------------------------------------
-*/
+    /*
+        -----------------------------------------------------------
+            BuyTokens struct for buy_tokens function
+        -----------------------------------------------------------
+    */
     #[derive(Accounts)]
     #[instruction(_ico_ata_for_ico_program_bump: u8)]
     pub struct BuyTokens<'info> {
@@ -226,11 +226,11 @@ pub mod ico {
         pub system_program: Program<'info, System>,
     }
 
-    /* 
-    -----------------------------------------------------------
-        Data struct for PDA Account
-    -----------------------------------------------------------
-*/
+    /*
+        -----------------------------------------------------------
+            Data struct for PDA Account
+        -----------------------------------------------------------
+    */
     #[account]
     pub struct Data {
         pub admin: Pubkey,
