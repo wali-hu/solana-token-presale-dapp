@@ -321,9 +321,8 @@ export default function Home() {
                     <p className="mt-1">
                       Status:{" "}
                       <span
-                        className={`font-semibold ${
-                          isAdmin ? "text-green-600" : "text-blue-600"
-                        }`}
+                        className={`font-semibold ${isAdmin ? "text-green-600" : "text-blue-600"
+                          }`}
                       >
                         {isAdmin ? "Admin" : "User"}
                       </span>
@@ -363,7 +362,7 @@ export default function Home() {
                         </div>
                         <div>
                           <p className="text-gray-600">Token Price</p>
-                          <p className="font-medium">0.001 SOL</p>
+                          <p className="font-medium">0.005 SOL</p>
                         </div>
                         <div>
                           <p className="text-gray-600">Available</p>
